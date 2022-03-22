@@ -12,6 +12,30 @@
       "email": "test@test.com",
       "phoneNumber": "1234567890",
       "salary": 65000
+    },
+    {
+      "id": 3,
+      "firstName": "Tyler",
+      "lastName": "Johnson",
+      "email": "tjohn@gmail.com",
+      "phoneNumber": "123-456-7890",
+      "salary": 212000
+    },
+    {
+      "id": 4,
+      "firstName": "Live",
+      "lastName": "Reload",
+      "email": "load@success.com",
+      "phoneNumber": "321-654-9870",
+      "salary": 3000
+    },
+    {
+      "id": 5,
+      "firstName": "Xavier",
+      "lastName": "Johnson",
+      "email": "johnlast@gmail.com",
+      "phoneNumber": "123456789",
+      "salary": 666550
     }
   ],
   "comments": [

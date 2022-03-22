@@ -20,16 +20,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Xavier</td>
-            <td>Johnson</td>
-            <td>myemail@gmail.com</td>
-            <td>123-456-7890</td>
-            <td>$65,000</td>
-            <td>
+        <tr *ngFor="let employee of employeeList">
+          <td>{{employee.id}}</td>
+          <td>{{employee.firstName}}</td>
+          <td>{{employee.lastName}}</td>
+          <td>{{employee.email}}</td>
+          <td>{{employee.phoneNumber}}</td>
+          <td>{{employee.salary}}</td>
+          <td>
                 <button class="btn btn-info">Edit</button>
-                <button class="btn btn-danger mx-3">Delete</button>
+                <button (click)="this.deleteEmployee(employee.id)" class="btn btn-danger mx-3">Delete</button>
             </td>
         </tr>
     </tbody>
@@ -68,8 +68,8 @@
               </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" (click)="postEmployeeInfo()">Save changes</button>
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="createEmployee()">Save changes</button>
         </div>
       </div>
     </div>

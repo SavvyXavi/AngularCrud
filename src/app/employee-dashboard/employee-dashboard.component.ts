@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { EmployeeModel } from './models/employee-model';
+import { Employee } from './models/employee-model';
 
 import { ApiService } from '../shared/api.service';
 
@@ -10,8 +10,9 @@ import { ApiService } from '../shared/api.service';
   styleUrls: ['./employee-dashboard.component.css']
 })
 export class EmployeeDashboardComponent implements OnInit {
-  formValue !: FormGroup;
-  employeeModelObj: EmployeeModel = new EmployeeModel();
+  formValue!: FormGroup;
+  employeeModelObj: Employee = new Employee();
+  employeeList !:Employee[];
   constructor(private formBuilder: FormBuilder, private api: ApiService) { }
 
   ngOnInit(): void {
@@ -22,9 +23,15 @@ export class EmployeeDashboardComponent implements OnInit {
       phoneNumber: [''],
       salary: ['']
     })
+
+    this.getEmployeeList();
   }
 
-  postEmployeeInfo() {
+  // get f() {
+  //   return this.formValue.controls;
+  // }
+
+  createEmployee() {
     this.employeeModelObj.firstName = this.formValue.value.firstName;
     this.employeeModelObj.lastName = this.formValue.value.lastName;
     this.employeeModelObj.email = this.formValue.value.email;
@@ -35,6 +42,10 @@ export class EmployeeDashboardComponent implements OnInit {
     .subscribe(res => {
       console.log(res);
       alert("Employee Added Successfully")
+      let cancelInfo = document.getElementById('cancel');
+      cancelInfo?.click();
+      this.formValue.reset();
+      this.getEmployeeList();
     },
     err=>{
       alert("Something went wrong!")
@@ -42,4 +53,18 @@ export class EmployeeDashboardComponent implements OnInit {
     )
   }
 
+
+  getEmployeeList(){
+    this.api.getEmployee()
+    .subscribe(res => {
+      this.employeeList = res
+    })
+  }
+
+  deleteEmployee(id: number) {
+    this.api.deleteEmployee(id)
+    .subscribe(res => {
+      alert("Employee deleted")
+    })
+  }
 }
