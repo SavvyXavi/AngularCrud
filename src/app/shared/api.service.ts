@@ -16,7 +16,7 @@ export class ApiService {
     }))
   }
 
-  getEmployee() {
+  getEmployees() {
     return this.http.get("http://localhost:3000/posts")
     .pipe(map((res:any) =>{
       return res;
@@ -24,10 +24,11 @@ export class ApiService {
   }
 
   editEmployee(data: Employee){
-    return this.http.put("https://localhost:3000/posts", data);
+    return this.http.put("http://localhost:3000/posts/", data);
   }
 
-  deleteEmployee(data: number){
-    return this.http.delete("https://localhost:3000/posts")
+  deleteEmployee(id: string){
+    return this.http.delete("http://localhost:3000/posts/" + id)
   }
 }
+

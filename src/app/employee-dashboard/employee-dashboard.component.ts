@@ -40,7 +40,6 @@ export class EmployeeDashboardComponent implements OnInit {
 
     this.api.postEmployee(this.employeeModelObj)
     .subscribe(res => {
-      console.log(res);
       alert("Employee Added Successfully")
       let cancelInfo = document.getElementById('cancel');
       cancelInfo?.click();
@@ -55,16 +54,20 @@ export class EmployeeDashboardComponent implements OnInit {
 
 
   getEmployeeList(){
-    this.api.getEmployee()
+    this.api.getEmployees()
     .subscribe(res => {
       this.employeeList = res
     })
   }
 
   deleteEmployee(id: number) {
-    this.api.deleteEmployee(id)
+    const changeToString = id.toString()
+    this.api.deleteEmployee(changeToString)
     .subscribe(res => {
-      alert("Employee deleted")
+      alert("Employee deleted");
+      this.getEmployeeList();
     })
+    
   }
+
 }

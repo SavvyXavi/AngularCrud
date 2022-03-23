@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <h1>Angular CRUD</h1>
         <div class="d-flex">
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" id="addEmployee">Add Employee</button>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" id="addEmployee">Add Employee</button>
         </div>
     </div>
 </nav>
@@ -28,7 +28,7 @@
           <td>{{employee.phoneNumber}}</td>
           <td>{{employee.salary}}</td>
           <td>
-                <button class="btn btn-info">Edit</button>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
                 <button (click)="this.deleteEmployee(employee.id)" class="btn btn-danger mx-3">Delete</button>
             </td>
         </tr>
