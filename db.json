@@ -1,12 +1,28 @@
 {
   "posts": [
     {
-      "id": 3,
-      "firstName": "Tyler",
+      "id": 4,
+      "firstName": "Xavier",
       "lastName": "Johnson",
-      "email": "tjohn@gmail.com",
-      "phoneNumber": "123-456-7890",
-      "salary": 212000
+      "email": "xev@ok.com",
+      "phoneNumber": "14022433",
+      "salary": 32133213
+    },
+    {
+      "id": 5,
+      "firstName": "New",
+      "lastName": "Employee",
+      "email": "newEmp@emp.com",
+      "phoneNumber": "1234567890",
+      "salary": 326554
+    },
+    {
+      "id": 6,
+      "firstName": "Latest",
+      "lastName": "Update",
+      "email": "late@update.com",
+      "phoneNumber": "1234560789",
+      "salary": 6554563
     }
   ],
   "comments": [],

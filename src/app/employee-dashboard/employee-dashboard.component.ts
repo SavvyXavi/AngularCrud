@@ -13,6 +13,9 @@ export class EmployeeDashboardComponent implements OnInit {
   formValue!: FormGroup;
   employeeModelObj: Employee = new Employee();
   employeeList !:Employee[];
+  editButton: boolean = false;
+  addButton: boolean = false;
+
   constructor(private formBuilder: FormBuilder, private api: ApiService) { }
 
   ngOnInit(): void {
@@ -30,6 +33,12 @@ export class EmployeeDashboardComponent implements OnInit {
   // get f() {
   //   return this.formValue.controls;
   // }
+
+  addEmployeeBtn() {
+    this.formValue.reset();
+    this.editButton = false;
+    this.addButton = true;
+  }
 
   createEmployee() {
     this.employeeModelObj.firstName = this.formValue.value.firstName;
@@ -58,6 +67,18 @@ export class EmployeeDashboardComponent implements OnInit {
     .subscribe(res => {
       this.employeeList = res
     })
+  }
+
+  editEmployee(employee: Employee) {
+    this.addButton = false;
+    this.editButton = true;
+    this.formValue.controls['firstName'].setValue(employee.firstName);
+    this.formValue.controls['lastName'].setValue(employee.lastName);
+    this.formValue.controls['email'].setValue(employee.email);
+    this.formValue.controls['phoneNumber'].setValue(employee.phoneNumber);
+    this.formValue.controls['salary'].setValue(employee.salary);
+
+    this.api.editEmployee(employee)
   }
 
   deleteEmployee(id: number) {
