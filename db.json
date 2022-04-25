@@ -1,14 +1,6 @@
 {
   "posts": [
     {
-      "id": 4,
-      "firstName": "Xavier",
-      "lastName": "Johnson",
-      "email": "xev@ok.com",
-      "phoneNumber": "14022433",
-      "salary": 32133213
-    },
-    {
       "id": 5,
       "firstName": "New",
       "lastName": "Employee",
@@ -23,6 +15,14 @@
       "email": "late@update.com",
       "phoneNumber": "1234560789",
       "salary": 6554563
+    },
+    {
+      "id": 7,
+      "firstName": "Jason",
+      "lastName": "Johnson",
+      "email": "google@ok.com",
+      "phoneNumber": "123456484",
+      "salary": 12654684
     }
   ],
   "comments": [],
