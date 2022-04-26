@@ -17,3 +17,7 @@
 label {
     color:#fff;
 }
+span, a {
+    color: white;
+    margin-top: 10px;
+}

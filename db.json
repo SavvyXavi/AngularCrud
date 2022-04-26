@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "employees": [
     {
       "id": 5,
       "firstName": "New",
@@ -25,6 +25,7 @@
       "salary": 12654684
     }
   ],
+  "signup": [],
   "comments": [],
   "profile": {
     "name": "typicode"
